@@ -4,20 +4,22 @@
 
 Tutorial extracted from the book *The Linux Command Line by William Shotts*.
 
-## Introduction
+## 1. Introduction
 
 ### Useful commands
 - **df**: To see the current amount of free space on our disk drives.
 - **free**: to display the amount of free memory, enter the free command.
 - **exit (or CTRL-D)**: to end a terminal session.
 
-## Navigation
+## 2. Navigation
 ### Hints:
 - do not embed spaces in filenames.
 
 ### Useful commands
 - **pwd**: Print name of current working directory.
 - **cd**: Change directory.
+- **cd \<and nothing else\>**: Change the working directory to your home directory.
+- **cd -**: Changes the working directory to the previous working directory.
 - **ls**: List directory contents.
 
 ### Other
@@ -28,7 +30,7 @@ Example of absolute pathnames:
 Example of relative pathnames (. means 'current working directory'): 
 > cd ./bin or cd bin
 
-## Exploring the System
+## 3. Exploring the System
 
 ### Useful commands
 - **ls**: List directory contents.
@@ -39,7 +41,7 @@ Example of relative pathnames (. means 'current working directory'):
 ### Hints: 
 - If you are using a mouse, you can double-click a filename to copy it and middle-click to paste it into commands.
 
-## Manipulating Files and Directories
+## 4. Manipulating Files and Directories
 
 ### Wildcards
 - **\***: Matches any characters.
@@ -57,10 +59,26 @@ Example of relative pathnames (. means 'current working directory'):
 - **mkdir**: Create directories (e.g. mkdir dir1 dir2 dir3).
 - **rm**: Remove files and directories.
 - **rm -r file1 dir1**: Delete file1 and dir1 and its contents.
-- **ln file link**: Create a hard link.
+- **ln file link**: Create a hard link. When we create hard links, we are actually creating additional name parts that all refer to the same data part.
 - **ln -s file link -r**: Create a symbolic link. They operate in much the same way as a Windows shortcut.
 
 ### Hints
 - Whenever you use wildcards with rm, test the wildcard first with ls.
 
+## 5. Working with Commands
+
+### Useful commands
+- **type**: Indicate how a command name is interpreted. It can be used to find out whether the name of a command that you want to create is already being used.
+- **which**: Display which executable program will be executed. It determine the exact location of a given
+executable. It works only for executable programs.
+- **help**: Get help for shell builtins. When square brackets appear in the description of a command's syntax, they indicate optional items.
+- **man**: Display a command’s manual page.
+- **apropos**: Display a list of appropriate commands.
+- **info**: Display a command’s info entry.
+- **whatis**: Display one-line manual page descriptions.
+- **alias**: Create an alias for a command. It vanishes when your shell session ends.
+- **cd /usr; ls; cd -**: Example of three combined commands on one line.
+- **alias foo='cd /usr; ls; cd -'**: Create the command 'foo' from the previous example.
+- **unalias foo**: To remove the alias 'foo'.
+- **alias \<and nothing else\>**: To see all the aliases defined in the environment.
 
