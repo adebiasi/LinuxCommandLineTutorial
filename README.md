@@ -1,6 +1,8 @@
-# Tutorial of the Linux Command Line
+# Tutorial of the Linux Command Line (Part one)
 
-*“Graphical user interfaces make easy tasks easy, while command line interfaces make difficult tasks possible”*
+*“Graphical user interfaces make easy tasks easy, while command line interfaces make difficult tasks possible.”*
+
+*“Everything is a file.”*
 
 Tutorial extracted from the book *The Linux Command Line by William Shotts*.
 
@@ -82,3 +84,18 @@ executable. It works only for executable programs.
 - **unalias foo**: To remove the alias 'foo'.
 - **alias \<and nothing else\>**: To see all the aliases defined in the environment.
 
+## 6. Redirection
+
+### Useful terms
+- By default, both **standard output (stdout)** and **standard error (stderr)** are linked to the screen and not saved into a disk file.
+- By default **standard input (stdin)** is attached to the keyboard.
+
+### Useful commands
+- **cat**: Concatenate files
+- **sort**: Sort lines of text
+- **uniq**: Report or omit repeated lines
+- **grep**: Print lines matching a pattern
+- **wc**: Print newline, word, and byte counts for each file
+- **head**: Output the first part of a file
+- **tail**: Output the last part of a file
+- **tee**: Read from standard input and write to standard output and files
