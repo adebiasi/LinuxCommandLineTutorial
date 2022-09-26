@@ -1,4 +1,5 @@
-# Tutorial of the Linux Command Line (Part one)
+# Tutorial of the Linux Command Line
+# Part I Learning the Shell
 
 *“Graphical user interfaces make easy tasks easy, while command line interfaces make difficult tasks possible.”*
 
