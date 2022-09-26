@@ -142,3 +142,24 @@ executable. It works only for executable programs.
 - Completion (TAB key): Completion will also work on variables (if the beginning of the word is a $), usernames (if the word begins with ~), commands (if the word is the first word on the line), and hostnames (if the beginning of the word is @).
 
 ## 9. Permissions
+
+### Useful commands
+- **id**: Display user identity.
+- **chmod**: Change a file’s mode.
+- **chmod +x filename**: Enable the execution of the file.
+- **umask**: Set the default file permissions.
+- **su**: Run a shell as another user.
+- **sudo**: Execute a command as another user. Do not require access to the superuser’s password.
+- **chown**: Change a file’s owner.
+- **chgrp**: Change a file’s group ownership.
+- **passwd**: Change a user’s password.
+
+## 10. Processes
+- **ps**: Report a snapshot of current processes.
+- **top**: Display tasks.
+- **jobs**: List active jobs.
+- **bg**: Place a job in the background.
+- **fg**: Place a job in the foreground.
+- **kill**: Send a signal to a process.
+- **killall**: Kill processes by name.
+- **shutdown**: Shut down or reboot the system.
