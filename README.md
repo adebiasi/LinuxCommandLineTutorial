@@ -126,7 +126,7 @@ executable. It works only for executable programs.
 - **printenv | less**: Print a list of available variables.
 - **echo $(ls)**: The result of 'ls' is passed as an argument to the 'echo' command.
 
-### Hintes
+### Hints
 - Double quotes: If we place text inside double quotes, all the special characters used by the shell lose their special meaning and are treated as ordinary characters. The exceptions are $ (dollar sign), \ (backslash), and ` (backtick).
 - Single quotes: To suppress all expansions.
 - Escape character (\\): To quote only a single character.
