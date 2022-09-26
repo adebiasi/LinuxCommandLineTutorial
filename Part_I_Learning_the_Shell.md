@@ -1,12 +1,6 @@
 # Tutorial of the Linux Command Line
 # Part I Learning the Shell
 
-*“Graphical user interfaces make easy tasks easy, while command line interfaces make difficult tasks possible.”*
-
-*“Everything is a file.”*
-
-Tutorial extracted from the book *The Linux Command Line by William Shotts*.
-
 ## 1. Introduction
 
 ### Useful commands
