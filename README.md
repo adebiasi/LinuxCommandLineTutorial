@@ -87,11 +87,20 @@ executable. It works only for executable programs.
 ## 6. Redirection
 
 ### Useful terms
-- By default, both **standard output (stdout)** and **standard error (stderr)** are linked to the screen and not saved into a disk file.
-- By default **standard input (stdin)** is attached to the keyboard.
+- By default, both **standard output (stdout, file descriptors 1)** and **standard error (stderr, file descriptors 2)** are linked to the screen and not saved into a disk file.
+- By default **standard input (stdin, file descriptors 0)** is attached to the keyboard.
 
 ### Useful commands
+- **ls -l /usr/bin > ls-output.txt**: Redirect standard output to another file (in this case the file named ls-output.txt) instead of the screen.
+- **ls -l /usr/bin >> ls-output.txt**: Will result in the output being appended to the file.
+- **\> ls-output.txt**: Truncate an existing file or create a new, empty file (in this case the file named ls-output.txt).
+- **ls -l /bin/usr 2> ls-error.txt**: Redirect standard error (file descriptors 2) to another file (in this case the file named ls-error.txt) instead of the screen.
+- **ls -l /bin/usr &> ls-output.txt**: Redirect both standard output and standard error (file descriptors 2) to another file (in this case the file named ls-output.txt) instead of the screen.
 - **cat**: Concatenate files
+- **cat ls-output.txt**: To display the contents of the file ls-output.txt.
+- **cat movie.mpeg.0* > movie.mpeg**: Concatenate the files movie.mpeg.001, movie.mpeg.002 ... to movie.mpeg.
+- **cat > lazy_dog.txt**: Type the command followed by the text we want to place in the file. Remember to type ctrl-D at the end. It creates the test file lazy_dog.txt.
+- **command1 | command2**: The standard output of command1 is piped into the standard input of command2.
 - **sort**: Sort lines of text
 - **uniq**: Report or omit repeated lines
 - **grep**: Print lines matching a pattern
@@ -99,3 +108,7 @@ executable. It works only for executable programs.
 - **head**: Output the first part of a file
 - **tail**: Output the last part of a file
 - **tee**: Read from standard input and write to standard output and files
+
+### Hints
+- \> vs |: The redirection operator connects a command with a file (command1 > file1), while the pipeline operator connects the output of one command with the input of a second command (command1 | command2).
+
