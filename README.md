@@ -103,7 +103,9 @@ executable. It works only for executable programs.
 - **command1 | command2**: The standard output of command1 is piped into the standard input of command2.
 - **sort**: Sort lines of text
 - **uniq**: Report or omit repeated lines
+- **ls /bin /usr/bin | sort | uniq | wc -l**: To see the number of items we have in our sorted list.
 - **grep**: Print lines matching a pattern
+- **ls /bin /usr/bin | sort | uniq | grep zip**: Find all the files in our list of programs that had the word zip embedded in the name.
 - **wc**: Print newline, word, and byte counts for each file
 - **head**: Output the first part of a file
 - **tail**: Output the last part of a file
@@ -112,3 +114,23 @@ executable. It works only for executable programs.
 ### Hints
 - \> vs |: The redirection operator connects a command with a file (command1 > file1), while the pipeline operator connects the output of one command with the input of a second command (command1 | command2).
 
+## 7. Seeing the World as the Shell Sees It
+
+### Useful commands
+- **echo \***: Show the names of the files in the current working directory.
+- **echo \*s**: Show the names of the files in the current working directory that end with 's'.
+- **echo \~**: Show the home directory of the current user.
+- **echo $((2 + 2))**: Show the result of the arithmetic expansion (expressed as '$((expression))').
+- **echo Front-{A,B,C}-Back**: Use of brace expansion. The result is 'Front-A-Back Front-B-Back Front-C-Back'.
+- **echo Number_{1..5}**: Use of brace expansion. The result is 'Number_1 Number_2 Number_3 Number_4 Number_5'.
+- **printenv | less**: Print a list of available variables.
+- **echo $(ls)**: The result of 'ls' is passed as an argument to the 'echo' command.
+
+### Hintes
+- Double quotes: If we place text inside double quotes, all the special characters used by the shell lose their special meaning and are treated as ordinary characters. The exceptions are $ (dollar sign), \ (backslash), and ` (backtick).
+- Single quotes: To suppress all expansions.
+- Escape character (\\): To quote only a single character.
+
+## 8. Advanced Keyboard Tricks
+
+### Useful commands
