@@ -134,3 +134,11 @@ executable. It works only for executable programs.
 ## 8. Advanced Keyboard Tricks
 
 ### Useful commands
+- **clear**: Clear the terminal screen.
+- **history**: Display or manipulate the history list.
+- **script file**: Record an entire shell session and store it in a file.
+
+### Hints:
+- Completion (TAB key): Completion will also work on variables (if the beginning of the word is a $), usernames (if the word begins with ~), commands (if the word is the first word on the line), and hostnames (if the beginning of the word is @).
+
+## 9. Permissions
