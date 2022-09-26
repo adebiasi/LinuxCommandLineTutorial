@@ -155,11 +155,21 @@ executable. It works only for executable programs.
 - **passwd**: Change a user’s password.
 
 ## 10. Processes
+
+## Hints:
+- When a system starts up, it run a series of shell scripts (located in /etc) called init scripts, which start all the system services.
+- ctrl-C interrupts a program (not for programs in the background).
+- To launch a program so that it is immediately placed in the background, we follow the command with an ampersand (&) character.
+- ctrl-Z to stop a foreground process and place it in the background. We can either continue the program’s execution using the fg command or bg command.
+
+## Useful commands
 - **ps**: Report a snapshot of current processes.
-- **top**: Display tasks.
-- **jobs**: List active jobs.
+- **top**: Display tasks. 
+- **jobs**: List active jobs. Each job has the job number.
 - **bg**: Place a job in the background.
 - **fg**: Place a job in the foreground.
-- **kill**: Send a signal to a process.
+- **fg %1**: Place the job with job number euqal to 1 in the foreground.
+- **kill**: Send a signal to a process. We could specify the process using a jobspec (for example, %1) or a PID.
 - **killall**: Kill processes by name.
-- **shutdown**: Shut down or reboot the system.
+- **sudo shutdown -r now**: Reboot the system.
+- **sudo shutdown -h now**: Shut downthe system.
