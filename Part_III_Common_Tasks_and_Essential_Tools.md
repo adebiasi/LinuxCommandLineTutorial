@@ -47,6 +47,21 @@ Packaging System Families:
 - **traceroute**: Print the route packets trace to a network host.
 - **ip**: Show/manipulate routing, devices, policy routing, and tunnels.
 - **netstat**: Print network connections, routing tables, interface statistics, masquerade connections, and multicast memberships.
-- **ftp**: Internet file transfer program.
+- **ftp**: Internet file transfer program. FTP (in its original form) is not secure because it sends account names and passwords in cleartext.
+- **ftp fileserver**: Invoke the ftp program and have it connect to the FTP server fileserver.
+- **sftp remote-sys**: It does not require an FTP server to be running on the remote host. It requires only the SSH server.
+- **get filename**: In the ftp session, it tells the remote system to transfer the file 'filename' to the local system.
+- **bye** (also 'quit' or 'exit'): In the ftp session, it logs off the remote server and end the ftp program session.
 - **wget**: Non-interactive network downloader.
+- **wget http://linuxcommand.org/index.php**: To download the first page of linuxcommand.org.
 - **ssh**: OpenSSH SSH client (remote login program).
+- **ssh remote-sys**: Connect to a remote host named 'remote-sys'.
+- **ssh bob@remote-sys**: Connect to a remote host named 'remote-sys' specifying as user 'bob'.
+- **ssh remote-sys \<command\>**: Execute a single command on a remote system.
+- **ssh remote-sys 'ls *' \> dirlist.txt**: Perform an ls on the remote system and redirect the output to a file on the local system.
+- **ssh remote-sys 'ls * \> dirlist.txt'**: Perform an ls on the remote system and redirect the output to a file on the remote system.
+- **scp remote-sys:document.txt .**: Copy a document named document.txt from our home directory on the remote system, remote-sys, to the current working directory on our local system. scp requires the OpenSSH package.
+
+## 17. Searching for Files
+
+### Useful commands
