@@ -26,12 +26,18 @@ Packaging System Families:
 ## 15. Storage Media
 
 ### Useful commands
-- **mount**: Mount a file system
-- **umount**: Unmount a file system
-- **fsck**: Check and repair a file system
-- **fdisk**: Manipulate disk partition table
-- **mkfs**: Create a file system
-- **dd**: Convert and copy a file
-- **genisoimage**: (mkisofs) Create an ISO 9660 image file
-- **wodim**: (cdrecord) Write data to optical storage media
-- **md5sum**: Calculate an MD5 checksum
+- **ls /dev**: List the names devices.
+- **tail -f /var/log/messages**: Watch what the system is doing in near real-time.
+- **mount**: Mount a file system. Entering the command without arguments will display a list of the file systems currently mounted.
+- **mkdir /mnt/cdrom; mount -t iso9660 /dev/sdc /mnt/cdrom**: Create a directory and mount the '/dev/sdc' in the created directory.
+- **mkdir /mnt/iso_image; mount -t iso9660 -o loop image.iso /mnt/iso_image**: Create a directory and mount the image file as though it were a device and attach it to the file system tree.
+- **umount**: Unmount a file system (e.g. 'umount /dev/sdc').
+- **fsck**: Check and repair a file system.
+- **fdisk**: Manipulate disk partition table.
+- **mkfs**: Create a file system.
+- **dd**: Convert and copy a file.
+- **genisoimage**: (mkisofs) Create an ISO 9660 image file.
+- **wodim**: (cdrecord) Write data to optical storage media.
+- **md5sum**: Calculate an MD5 checksum.
+
+## 16. Networking
