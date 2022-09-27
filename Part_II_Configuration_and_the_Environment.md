@@ -19,4 +19,21 @@
 - **vi (or vim)**: traditional editor for Unix-like systems.
 - **emacs**: gigantic, all-purpose, doeseverything programming environment.
 
-## 12. A Gentle Introduction to
+## 12. A Gentle Introduction to VI (pronounced “vee eye”)
+
+### Hints:
+- When vi starts, it begins in command mode.
+- Press 'i' to go to *insert mode*.
+- Press 'ESC' key to go to *command mode*.
+
+### Useful commands:
+- **vi**: To start vi.
+- **vi foo.txt**: Create the file 'foo.txt' and open it in vi.
+
+### Useful commands in vim:
+- **esc key twice**: To find you way if you get “lost” in vi.
+- **:q**: To exit.
+- **:q!**: To exit discarding unsaved changes.
+- **:w**: To save.
+- **u**: To undu.
+
