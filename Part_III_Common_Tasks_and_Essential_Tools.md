@@ -41,3 +41,12 @@ Packaging System Families:
 - **md5sum**: Calculate an MD5 checksum.
 
 ## 16. Networking
+
+### Useful commands
+- **ping**: Send an ICMP ECHO_REQUEST to network hosts. For example 'ping linuxcommand.org'. Press 'ctrl-C' to interrupt the command.
+- **traceroute**: Print the route packets trace to a network host.
+- **ip**: Show/manipulate routing, devices, policy routing, and tunnels.
+- **netstat**: Print network connections, routing tables, interface statistics, masquerade connections, and multicast memberships.
+- **ftp**: Internet file transfer program.
+- **wget**: Non-interactive network downloader.
+- **ssh**: OpenSSH SSH client (remote login program).
