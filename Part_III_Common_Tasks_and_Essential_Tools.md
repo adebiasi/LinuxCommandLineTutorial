@@ -107,4 +107,37 @@ Packaging System Families:
 - **sudo tar xf /media/BigDisk/home.tar**: Same command as above.
 
 
-### 19. Regular Expressions
+## 19. Regular Expressions
+
+### Hints
+- Expression metacharacters: 
+    - \^: the next element 'at the beginning' or 'negation' inside brackets.
+    - \$: the preceding element 'at the end'.
+    - \.: 'any single char'.
+    - \[ \]: set of chars.
+    - \{ \}: to express minimum and maximum numbers of required matches.
+    - \-: range.
+    - \?: make the preceding element optional.
+    - \*: the item may occur any number of times.
+    - \+: at least one instance of the preceding element.
+    - \( \): 
+    - \|: or. 
+    - \\: normal char.
+- When we pass regular expressions containing metacharacters on the command line, they must be enclosed in 'quotes'.
+
+### Useful commands
+- **grep -i '^..j.r$' /usr/share/dict/words**: “What’s a five-letter word whose third letter is j and last letter is r that means . . . ?”
+- **grep -h xxx dirlist\*.txt**: We searched for any line in our files ...
+   - **'.zip'**: that matches the regular expression .zip (any char followed by 'zip').
+   - **'^zip'**: ... zip located at the beginning of the line.
+   - **'zip$'**: ... zip located at the end of the line.   
+   - **'\[bg\]zip'**: ... that contains the string bzip or gzip.
+   - **'\[\^bg\]zip'**: ... preceded by any character except b or g.
+   - **'\^\[ABCDEFGHIJKLMNOPQRSTUVWXZY\]'**: ... beginning with an uppercase letter.
+   - **'^\[A-Z\]'**: ... beginning with an uppercase letter.
+   - **^\[A-Za-z0-9\]'**: ... starting with letters and numbers.
+   - **'\^(bz\|gz\|zip)'**: ... starting with either bz, gz, or zip.
+
+## 20. Text Processing
+
+### Useful commands
