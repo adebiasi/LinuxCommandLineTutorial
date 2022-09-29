@@ -142,14 +142,36 @@ Packaging System Families:
 
 ### Useful commands
 - **cat**: Concatenate files and print on the standard output.
-- **sort**: Sort lines of text files.
+- **cat > foo.txt**: If not present, it creates the file 'foo.txt' then ... type our text, followed by enter to properly end the line and then 'ctrl-D' to indicate to cat that we have reached end of file.
+- **cat -A foo.txt**: Display the content of the file including the special chars (-A).
+- **diff**: Compare files line by line.
+- **diff -u file1.txt file2.txt**: The result is more concise with the unified format (-u).
+- **diff -Naur file1.txt file2.txt > patchfile.txt**: Create a diff file named patchfile.txt, then see excample below...
+- **patch**: Apply a diff file to an original.
+- **patch < patchfile.txt**: We did not have to specify a target file to patch, as the diff file (in unified format) already contains the filenames in the header.
+- **tr**: Translate or delete characters.
+- **sed**: Stream editor for filtering and transforming text.
+- **aspell**: Interactive spellchecker.
+- **aspell check foo.txt**: Spellcheck a text file containing simple prose.
+- **aspell -H check foo.txt**: HTML is ignored, and only the non-markup portions of the file are checked.
+
+### Less useful commands
+ **sort**: Sort lines of text files.
+- **sort > foo.txt**: use the keyboard, then press 'ctrl-D'.
+- **sort file1.txt file2.txt file3.txt > final_sorted_list.txt**: Merge multiple files into a single sorted whole.
 - **uniq**: Report or omit repeated lines.
+- **sort foo.txt | uniq**: Remove duplicate lines that are adjacent to each other. 
 - **cut**: Remove sections from each line of files.
 - **paste**: Merge lines of files.
 - **join**: Join lines of two files on a common field.
 - **comm**: Compare two sorted files line by line.
-- **diff**: Compare files line by line.
-- **patch**: Apply a diff file to an original.
-- **tr**: Translate or delete characters.
-- **sed**: Stream editor for filtering and transforming text.
-- **aspell**: Interactive spellchecker.
+
+## 21. Formatting Output
+
+### Less useful commands
+- **nl**: Number lines (similar to 'cat -n').
+- **fold**: Wrap each line to a specified length.
+- **fmt**: A simple text formatter.
+- **pr**: Prepare text for printing.
+- **printf**: Format and print data.
+- **groff**: A document formatting system.
