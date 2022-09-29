@@ -175,3 +175,24 @@ Packaging System Families:
 - **pr**: Prepare text for printing.
 - **printf**: Format and print data.
 - **groff**: A document formatting system.
+
+## 22. Printing
+
+### Less useful commands
+- **lpr**: Print files.
+- **a2ps**: Format files for printing on a PostScript printer.
+- **lpstat**: Show printer status information.
+- **lpq**: Show printer queue status.
+- **lprm**: Cancel print jobs.
+
+## 23. Compiling Programs
+
+## Hints
+- tarball: Compressed tar file that contains the source tree, or hierarchy of directories and files that comprise the source code.
+
+### Useful commands
+- **make**: Utility to maintain programs.
+- **which gcc**: Check presence of gcc compiler.
+- **tar tzvf tarfile | head**: Examine the contents of the tar file.    
+- **./configure; make**: The configure program is a shell script that is supplied with the source tree. (./ means current working directory.)
+- **sudo make install**: Well-packaged source code will often include a special make target called install. This target will install the final product in a system directory (/usr/local/bin) for use.
