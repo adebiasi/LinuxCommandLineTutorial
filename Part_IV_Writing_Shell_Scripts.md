@@ -59,3 +59,47 @@ ls -l "$REMOTE_FILE"
 ```
 
 ## 26. Top-Down Design
+
+### Shell examples
+
+The following is a script that demonstrates the use of a shell function:
+```bash
+1 #!/bin/bash
+2
+3 # Shell function demo
+4
+5 function step2 {
+6 echo "Step 2"
+7 return
+8 }
+9
+10 # Main program starts here
+11
+12 echo "Step 1"
+13 step2
+14 echo "Step 3"
+```
+
+Here is an example script that demonstrates how local variables are defined and used:
+```bash
+#!/bin/bash
+# local-vars: script to demonstrate local variables
+foo=0 # global variable foo
+funct_1 () {
+local foo # variable foo local to funct_1
+foo=1
+echo "funct_1: foo = $foo"
+}
+funct_2 () {
+local foo # variable foo local to funct_2
+foo=2
+echo "funct_2: foo = $foo"
+}
+echo "global: foo = $foo"
+funct_1
+echo "global: foo = $foo"
+funct_2
+echo "global: foo = $foo"
+```
+
+## 27. Flow Control: Branching with if
