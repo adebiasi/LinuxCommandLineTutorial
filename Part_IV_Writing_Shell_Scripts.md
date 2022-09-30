@@ -1,12 +1,12 @@
 ## 24. Writing Your First Script
 
-## Hints
+### Hints
 - The \#\! (called 'shebang') is used to specify the interpreter that should be used to execute the script that follows. Every shell script should include this as its first line (e.g. '#!/bin/bash').
 - The ~/bin directory is a good place to put scripts intended for personal use. If we write a script that everyone on a system is allowed to use, the traditional location is /usr/local/bin.
 - export PATH=~/bin:"$PATH": Add this line to the ~/.bashrc to add the 'bin' folder to the PATH variable. 
 
 
-## Configuring vim for Script Writing
+### Configuring vim for Script Writing
 - **:syntax on**: Turn on syntax highlighting.
 - **:set hlsearch**: Turn on the option to highlight search results.
 - **:set tabstop=4**: Set the number of columns occupied by a tab character.
@@ -103,3 +103,93 @@ echo "global: foo = $foo"
 ```
 
 ## 27. Flow Control: Branching with if
+
+The if statement has the following syntax:
+```bash
+if commands; then
+    commands
+[elif commands; then
+    commands...]
+[else
+    commands]
+fi
+```
+
+### Useful commands
+- **\[ expression \]**: The test command performs a variety of checks and comparisons.
+
+
+Here we have a script that demonstrates some of the file expressions:
+
+```bash
+#!/bin/bash
+# test-file: Evaluate the status of a file
+FILE=~/.bashrc
+if [ -e "$FILE" ]; then
+     if [ -f "$FILE" ]; then
+         echo "$FILE is a regular file."
+     fi
+     if [ -d "$FILE" ]; then
+         echo "$FILE is a directory."
+     fi
+     if [ -r "$FILE" ]; then
+         echo "$FILE is readable."
+     fi
+     if [ -w "$FILE" ]; then
+         echo "$FILE is writable."
+     fi
+     if [ -x "$FILE" ]; then
+         echo "$FILE is executable/searchable."
+     fi
+else
+    echo "$FILE does not exist"
+    exit 1
+fi
+exit
+```
+
+Here is a script that incorporates string expressions:
+```bash
+#!/bin/bash
+# test-string: evaluate the value of a string
+ANSWER=maybe
+if [ -z "$ANSWER" ]; then
+     echo "There is no answer." >&2
+     exit 1
+fi
+if [ "$ANSWER" = "yes" ]; then
+     echo "The answer is YES."
+elif [ "$ANSWER" = "no" ]; then
+echo "The answer is NO."
+     elif [ "$ANSWER" = "maybe" ]; then
+echo "The answer is MAYBE."
+else
+     echo "The answer is UNKNOWN."
+fi
+```
+
+```bash
+#!/bin/bash
+# test-integer: evaluate the value of an integer.
+INT=-5
+if [ -z "$INT" ]; then
+     echo "INT is empty." >&2
+     exit 1
+fi
+if [ "$INT" -eq 0 ]; then
+     echo "INT is zero."
+else
+     if [ "$INT" -lt 0 ]; then
+          echo "INT is negative."
+     else
+          echo "INT is positive."
+     fi
+     if [ $((INT % 2)) -eq 0 ]; then
+          echo "INT is even."
+     else
+          echo "INT is odd."
+     fi
+fi
+```
+
+It is possible to use also logical operators (&&, ||, !)
