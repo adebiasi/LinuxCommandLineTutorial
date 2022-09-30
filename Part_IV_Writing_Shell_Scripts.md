@@ -168,6 +168,7 @@ else
 fi
 ```
 
+Here is a script that uses integer expressions:
 ```bash
 #!/bin/bash
 # test-integer: evaluate the value of an integer.
@@ -193,3 +194,83 @@ fi
 ```
 
 It is possible to use also logical operators (&&, ||, !)
+
+## 28. Reading Keyboard Input
+
+read can assign input to multiple variables, as shown in this script:
+```bash
+#!/bin/bash
+# read-multiple: read multiple values from keyboard
+echo -n "Enter one or more values > "
+read var1 var2 var3 var4 var5
+echo "var1 = '$var1'"
+echo "var2 = '$var2'"
+echo "var3 = '$var3'"
+echo "var4 = '$var4'"
+echo "var5 = '$var5'"
+```
+
+With the -p option, we can provide a prompt string. With the -t and -s options, we can write a script that reads “secret” input and times out if the input is not completed in a specified time:
+```bash
+#!/bin/bash
+# read-secret: input a secret passphrase
+if read -t 10 -sp "Enter secret passphrase > " secret_pass; then
+     echo -e "\nSecret passphrase = '$secret_pass'"
+else
+     echo -e "\nInput timed out" >&2
+     exit 1
+fi
+```
+
+If no variables are listed after the read command, a shell variable, REPLY, will be assigned all the input.
+
+```bash
+#!/bin/bash
+# read-single: read multiple values into default variable
+echo -n "Enter one or more values > "
+read
+echo "REPLY = '$REPLY'"
+```
+
+A common type of interactivity is called menu-driven:
+```bash
+#!/bin/bash
+# read-menu: a menu driven system information program
+clear
+echo "
+Please Select:
+1. Display System Information
+2. Display Disk Space
+3. Display Home Space Utilization
+0. Quit
+"
+read -p "Enter selection [0-3] > "
+if [[ "$REPLY" =~ ^[0-3]$ ]]; then
+     if [[ "$REPLY" == 0 ]]; then
+          echo "Program terminated."
+          exit
+     fi
+     if [[ "$REPLY" == 1 ]]; then
+          echo "Hostname: $HOSTNAME"
+          uptime
+          exit
+     fi
+     if [[ "$REPLY" == 2 ]]; then
+          df -h
+          exit
+     fi
+     if [[ "$REPLY" == 3 ]]; then
+          if [[ "$(id -u)" -eq 0 ]]; then
+               echo "Home Space Utilization (All Users)"
+               du -sh /home/*
+          else
+               echo "Home Space Utilization ($USER)"
+               du -sh "$HOME"
+          fi
+          exit
+     fi
+else
+     echo "Invalid entry." >&2
+     exit 1
+fi
+```
