@@ -383,3 +383,53 @@ else
    exit 1
 fi
 ```
+
+Another example of sript using 'shift':
+```bash
+usage () {
+   echo "$PROGNAME: usage: $PROGNAME [-f file | -i]"
+   return
+}
+# process command line options
+interactive=
+filename=
+while [[ -n "$1" ]]; do
+   case "$1" in
+      -f | --file)          shift
+                            filename="$1"
+                            ;;
+      -i | --interactive)   interactive=1
+                            ;;
+      -h | --help)          usage
+                            exit
+                            ;;
+      *)                    usage >&2
+                            exit 1
+                            ;;
+   esac
+   shift
+done
+```
+
+## 33. Flow Control: Looping with for
+
+### Examples of for loop:
+
+```bash
+for i in A B C D; do echo $i; done
+
+for i in {A..D}; do echo $i; done
+
+for i in distros*.txt; do echo "$i"; done
+```
+
+Recent versions of bash have added a second form of the for command syntax, one that resembles the form found in the C programming language.
+For example:
+
+```bash
+for (( i=0; i<5; i=i+1 )); do
+   echo $i
+done
+```
+
+## 34. Strings and Numbers
