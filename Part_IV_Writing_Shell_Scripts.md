@@ -362,3 +362,24 @@ esac
 ```
 
 Instead of ';;', the addition of the ';;&' syntax allows case to continue to the next test rather than simply terminating.
+
+## 32. Positional Parameters
+
+- $0 will always contain the first item appearing on the command line, which is the pathname of the program being executed.
+- $# contains the number of arguments on the command line.
+
+Here is a simple file information program:
+```bash
+#!/bin/bash
+# file-info: simple file information program
+PROGNAME="$(basename "$0")"
+if [[ -e "$1" ]]; then
+   echo -e "\nFile Type:"
+   file "$1"
+   echo -e "\nFile Status:"
+   stat "$1"
+else
+   echo "$PROGNAME: usage: $PROGNAME file" >&2
+   exit 1
+fi
+```
