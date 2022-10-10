@@ -233,6 +233,7 @@ echo "REPLY = '$REPLY'"
 ```
 
 A common type of interactivity is called menu-driven:
+
 ```bash
 #!/bin/bash
 # read-menu: a menu driven system information program
@@ -290,7 +291,8 @@ echo "Finished."
 ```
 
 Here we see a version of the while-menu program incorporating both break and continue:
-````bash
+
+```bash
 #!/bin/bash
 # while-menu2: a menu driven system information program
 DELAY=3 # Number of seconds to display results
@@ -344,3 +346,19 @@ echo "Program terminated."
    - 'fi', 'else', 'done' have decreased indentation. At the same level of 'if', 'while'.
    
 ## 30. Troubleshooting
+## 31. Flow Control: Branching with case
+In bash, the multiple-choice compound command is called case.
+Here is an example of patterns at work:
+```bash
+#!/bin/bash
+read -p "enter word > "
+case "$REPLY" in
+   [[:alpha:]]) echo "is a single alphabetic character." ;;
+   [ABC][0-9]) echo "is A, B, or C followed by a digit." ;;
+   ???) echo "is three characters long." ;;
+   *.txt) echo "is a word ending in '.txt'" ;;
+   *) echo "is something else." ;;
+esac
+```
+
+Instead of ';;', the addition of the ';;&' syntax allows case to continue to the next test rather than simply terminating.
