@@ -433,3 +433,7 @@ done
 ```
 
 ## 34. Strings and Numbers
+
+## 35. Arrays
+
+## 36. Exotica
